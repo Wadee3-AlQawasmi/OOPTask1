@@ -1,0 +1,125 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EmployeeView</title>
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script>
+
+        $(document).ready(function () {
+            $(".Day").hide();
+            $("#Type").change(function () {
+                if ($(this).val() == "Hourly") {
+                    $(".Day").hide();
+                }
+                else {
+                    $(".Day").show();
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <form action="Action" method="post">
+        <div style="clear:left ">
+            <div style="float:left">
+                First Name
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtFirst" />
+            </div>
+        </div>
+
+        <div style="clear:left">
+            <div style="float:left">
+                Last Name
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtLast" />
+            </div>
+        </div>
+
+        <div style="clear:left">
+            <div style="float:left">
+                Email
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtEmail" />
+            </div>
+        </div>
+
+        <div style="clear:left">
+            <div style="float:left">
+                Employee Type
+            </div>
+            <div style="float:left">
+                <select id="Type" name="List">
+                    <option value="Hourly">Hourly</option>
+                    <option value="Daily">Daily</option>
+                </select>
+            </div>
+        </div>
+        <div style="clear:left">
+            <div style="float:left">
+                Hours
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtHours" />
+            </div>
+            <div style="float:left">
+                Hour Price
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtHourPrice" />
+            </div>
+        </div>
+        <div class="Day" style="clear:left">
+            <div style="float:left">
+                Days
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtDay" />
+            </div>
+            <div style="float:left">
+                Day Price
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtDayPrice" />
+            </div>
+        </div>
+        <div style="clear:left">
+            <div style="float:left">
+                Phone
+            </div>
+            <div style="float:left">
+                <input type="text" name="TxtPhone" />
+            </div>
+        </div>
+
+        <div style="clear:left">
+            <div style="float:left">
+                Gender
+            </div>
+            <div style="float:left">
+                <input type="radio" name="gender" value="male" /> Male
+                <input type="radio" name="gender" value="female" /> Female
+            </div>
+        </div>
+
+        <div style="clear:left">
+            <input type="submit" value="Save" />
+        </div>
+        <br />
+        <br />
+        <div style="color:red">
+            <span>@ViewData["Msg"]</span>
+        </div>
+    </form>
+</body>
+</html>
